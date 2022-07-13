@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
@@ -9,8 +10,107 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/background"
+        android:clipToPadding="false"
+        android:paddingHorizontal="16dp"
         tools:context=".ui.screens.LoginFragment">
 
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/materialCardView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="@dimen/default_corner_radius"
+            app:layout_constraintBottom_toTopOf="@+id/btnLogin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_chainStyle="packed"
+            app:strokeColor="@color/black25">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/tvEmail"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:labelFor="@+id/etEmail"
+                    android:text="@string/email"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.235"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/etEmail"
+                    style="@style/EditTextStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/small_margin"
+                    android:autofillHints="emailAddress"
+                    android:hint="@string/email_hint"
+                    android:inputType="textEmailAddress"
+                    app:layout_constraintEnd_toEndOf="@+id/tvEmail"
+                    app:layout_constraintStart_toStartOf="@+id/tvEmail"
+                    app:layout_constraintTop_toBottomOf="@+id/tvEmail" />
+
+                <TextView
+                    android:id="@+id/tvPassword"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/default_margin"
+                    android:labelFor="@id/etPassword"
+                    android:text="@string/password"
+                    app:layout_constraintEnd_toEndOf="@+id/etEmail"
+                    app:layout_constraintStart_toStartOf="@+id/etEmail"
+                    app:layout_constraintTop_toBottomOf="@+id/etEmail" />
+
+                <EditText
+                    android:id="@+id/etPassword"
+                    style="@style/EditTextStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/small_margin"
+                    android:autofillHints="password"
+                    android:hint="@string/password_hint"
+                    android:inputType="textPassword"
+                    app:layout_constraintEnd_toEndOf="@+id/tvPassword"
+                    app:layout_constraintStart_toStartOf="@+id/tvPassword"
+                    app:layout_constraintTop_toBottomOf="@+id/tvPassword" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnLogin"
+            style="@style/ColoredButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_margin"
+            android:text="@string/login"
+            app:layout_constraintBottom_toTopOf="@+id/btnCreate"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/materialCardView" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnCreate"
+            style="@style/BorderlessColoredButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/default_margin"
+            android:text="@string/create"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

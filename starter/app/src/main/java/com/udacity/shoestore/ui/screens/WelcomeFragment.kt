@@ -4,20 +4,18 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.inputmethod.EditorInfo
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.ui.NavigationUI
 import com.udacity.shoestore.R
-import com.udacity.shoestore.databinding.FragmentLoginBinding
+import com.udacity.shoestore.databinding.FragmentWelcomeBinding
 
-class LoginFragment : Fragment() {
+class WelcomeFragment : Fragment() {
 
     ////////////////////////////////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////////////// {BINDING}
     ////////////////////////////////////////////////////////////////////////////////////////////////
-    private var _binding: FragmentLoginBinding? = null
+    private var _binding: FragmentWelcomeBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -25,7 +23,7 @@ class LoginFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = DataBindingUtil.inflate(inflater, R.layout.fragment_login, container, false)
+        _binding = DataBindingUtil.inflate(inflater, R.layout.fragment_welcome, container, false)
         return binding.root
     }
 
@@ -40,17 +38,11 @@ class LoginFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.apply {
-            btnLogin.setOnClickListener { navigateToWelcomeFragment() }
-            btnCreate.setOnClickListener { navigateToWelcomeFragment() }
+            btnContinue.setOnClickListener {
+                val action = WelcomeFragmentDirections.actionWelcomeFragmentToInstructionFragment()
+                findNavController().navigate(action)
+            }
         }
-    }
-
-    /**
-     * #### navigate from login to welcome
-     * #### created to avoid repetition
-     */
-    private fun navigateToWelcomeFragment() {
-        findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToWelcomeFragment())
     }
 
 }
