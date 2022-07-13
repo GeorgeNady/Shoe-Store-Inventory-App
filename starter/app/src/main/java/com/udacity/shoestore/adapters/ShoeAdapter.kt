@@ -44,7 +44,7 @@ class ShoeAdapter : ListAdapter<Shoe, ShoeAdapter.ShoeViewHolder>(Differ) {
         }
     }
 
-    private var onclickListener : ((Shoe) -> Unit)? = null
+    private var onclickListener: ((Shoe) -> Unit)? = null
 
     fun setOnItemClickListener(listener: (Shoe) -> Unit) {
         onclickListener = listener

@@ -53,8 +53,14 @@ class ShoeDetailFragment : Fragment() {
             }
 
             btnSave.setOnClickListener {
-                val images = if (mShoe!=null) mShoe?.images else listOf(R.drawable.shoes_1)
-                val shoe = Shoe(etName.txt,etSize.txt.toDouble(),etCompany.txt,etDescription.txt, images)
+                val images = if (mShoe != null) mShoe?.images else listOf(R.drawable.shoes_1)
+                val shoe = Shoe(
+                    etName.txt,
+                    etSize.txt.toDouble(),
+                    etCompany.txt,
+                    etDescription.txt,
+                    images
+                )
                 val result = viewModel.saveShoe(shoe)
                 if (result) findNavController().navigateUp()
             }
