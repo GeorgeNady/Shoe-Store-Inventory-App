@@ -33,6 +33,11 @@ class ShoeAdapter : ListAdapter<Shoe, ShoeAdapter.ShoeViewHolder>(Differ) {
 
         holder.binding.apply {
             bShoe = item
+
+            item.images?.let {
+                ivShoe.setImageResource(item.images.first())
+            }
+
             materialCardView.setOnClickListener {
                 onclickListener?.let { it(item) }
             }

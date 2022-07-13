@@ -19,10 +19,10 @@
     <string name="floating_action_button">floating action button</string>
     <string name="logout">Logout</string>
 
-    <string name="shoe_name_format">Name: %s%</string>
-    <string name="shoe_size_format">Size: %s%</string>
-    <string name="shoe_company_format">Company: %s%</string>
-    <string name="shoe_description_format">Description: %s%</string>
+    <string name="shoe_name_format">Name: %s</string>
+    <string name="shoe_size_format">Size: %s</string>
+    <string name="shoe_company_format">Company: %s</string>
+    <string name="shoe_description_format">Description: %s</string>
     <string name="shoe_image">Shoe Image</string>
     <string name="name">Name</string>
     <string name="company">Company</string>
