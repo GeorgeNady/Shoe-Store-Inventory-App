@@ -1,23 +1,21 @@
-package com.udacity.shoestore.ui.screens
+package com.udacity.shoestore.ui.screens.instraction
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.inputmethod.EditorInfo
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.ui.NavigationUI
 import com.udacity.shoestore.R
-import com.udacity.shoestore.databinding.FragmentLoginBinding
+import com.udacity.shoestore.databinding.FragmentInstructionBinding
 
-class LoginFragment : Fragment() {
+class InstructionFragment : Fragment() {
 
     ////////////////////////////////////////////////////////////////////////////////////////////////
     ////////////////////////////////////////////////////////////////////////////////////// {BINDING}
     ////////////////////////////////////////////////////////////////////////////////////////////////
-    private var _binding: FragmentLoginBinding? = null
+    private var _binding: FragmentInstructionBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -25,7 +23,8 @@ class LoginFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = DataBindingUtil.inflate(inflater, R.layout.fragment_login, container, false)
+        _binding =
+            DataBindingUtil.inflate(inflater, R.layout.fragment_instruction, container, false)
         return binding.root
     }
 
@@ -34,23 +33,19 @@ class LoginFragment : Fragment() {
         _binding = null
     }
 
+
     ////////////////////////////////////////////////////////////////////////////////////////////////
     //////////////////////////////////////////////////////////////////////////////////////// {LOGIC}
     ////////////////////////////////////////////////////////////////////////////////////////////////
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.apply {
-            btnLogin.setOnClickListener { navigateToWelcomeFragment() }
-            btnCreate.setOnClickListener { navigateToWelcomeFragment() }
+            btnStart.setOnClickListener {
+                val action =
+                    InstructionFragmentDirections.actionInstructionFragmentToShoeListFragment()
+                findNavController().navigate(action)
+            }
         }
-    }
-
-    /**
-     * #### navigate from login to welcome
-     * #### created to avoid repetition
-     */
-    private fun navigateToWelcomeFragment() {
-        findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToWelcomeFragment())
     }
 
 }

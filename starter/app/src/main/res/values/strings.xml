@@ -12,4 +12,11 @@
     <string name="welcome_icon">Welcome icon</string>
     <string name="welcome_message">Welcome to a shoe store</string>
     <string name="_continue">Continue</string>
+
+    <string name="instructions_title">Instructions</string>
+    <string name="instructions">In the next destination you will see a list of shoes.\n\nIf you want to add a custom shoe, \nyou need to press the Add shoe button.\n\nThen you will fill in the following fields: ( name, size, company, description, image)</string>
+    <string name="start">Start</string>
+    <string name="floating_action_button">floating action button</string>
+    <string name="logout">Logout</string>
+
 </resources>
