@@ -19,6 +19,10 @@
         <item name="android:textSize">@dimen/default_text_size</item>
     </style>
 
+    <style name="TextStylePadding" parent="TextStyle">
+        <item name="android:padding">@dimen/small_padding</item>
+    </style>
+
     <style name="BigTextStyle" parent="Widget.AppCompat.TextView">
         <item name="android:fontFamily">@font/cagliostro</item>
         <item name="android:textSize">@dimen/big_text_size</item>

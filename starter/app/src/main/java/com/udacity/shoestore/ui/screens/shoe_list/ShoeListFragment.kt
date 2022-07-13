@@ -6,9 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.R
+import com.udacity.shoestore.adapters.ShoeAdapter
 import com.udacity.shoestore.databinding.FragmentInstructionBinding
 import com.udacity.shoestore.databinding.FragmentShoeListBinding
 import kotlinx.android.synthetic.main.fragment_instruction.*
@@ -40,13 +42,16 @@ class ShoeListFragment : Fragment() {
     ////////////////////////////////////////////////////////////////////////////////////////////////
     //////////////////////////////////////////////////////////////////////////////////////// {LOGIC}
     ////////////////////////////////////////////////////////////////////////////////////////////////
-    private val viewModel by viewModels<ShoeListViewModel>()
+    private val viewModel by activityViewModels<ShoeListViewModel>()
+    private val adapter by lazy { ShoeAdapter() }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.apply {
+            setupRecyclerView()
+
             fabDetail.setOnClickListener {
-                val action = ShoeListFragmentDirections.actionShoeListFragmentToShoeDetailFragment()
+                val action = ShoeListFragmentDirections.actionShoeListFragmentToShoeDetailFragment(null)
                 findNavController().navigate(action)
             }
             viewModel.shoeList.observe(viewLifecycleOwner) {
@@ -54,5 +59,12 @@ class ShoeListFragment : Fragment() {
             }
         }
     }
+
+    private fun FragmentShoeListBinding.setupRecyclerView() {
+        adapter.apply {
+            rvShoe.adapter = this
+        }
+    }
+
 
 }

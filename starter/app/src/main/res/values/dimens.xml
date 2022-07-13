@@ -5,8 +5,14 @@
     <dimen name="default_text_size">16sp</dimen>
     <dimen name="big_text_size">22sp</dimen>
     <dimen name="default_corner_radius">10dp</dimen>
-    <dimen name="default_vertical_padding">16dp</dimen>
-    <dimen name="default_horizontal_padding">8dp</dimen>
+
+    <dimen name="default_elevation">5dp</dimen>
+
+    <dimen name="small_padding">8dp</dimen>
+    <dimen name="default_padding">16dp</dimen>
+
+    <dimen name="default_vertical_padding">8dp</dimen>
+    <dimen name="default_horizontal_padding">16dp</dimen>
     <dimen name="stroke_width">1dip</dimen>
     <dimen name="iv_dimen">50dp</dimen>
 </resources>

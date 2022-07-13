@@ -24,6 +24,7 @@ class LoginFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = DataBindingUtil.inflate(inflater, R.layout.fragment_login, container, false)
+        setHasOptionsMenu(false)
         return binding.root
     }
 
