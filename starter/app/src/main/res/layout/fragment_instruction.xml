@@ -3,16 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <data>
-
-    </data>
-
+    <!--  we used ConstraintLayout to Build a Responsive UI -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:clipToPadding="false"
         tools:context=".ui.screens.instraction.InstructionFragment">
 
+        <!--  Title -->
         <TextView
             android:id="@+id/tvTitle"
             android:layout_width="0dp"
@@ -26,6 +24,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
+        <!--  Instructions -->
         <TextView
             android:id="@+id/instruction_text"
             android:layout_width="0dp"
@@ -37,6 +36,7 @@
             app:layout_constraintStart_toStartOf="@+id/tvTitle"
             app:layout_constraintTop_toBottomOf="@id/tvTitle" />
 
+        <!--  Start button -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnStart"
             style="@style/ColoredButton"

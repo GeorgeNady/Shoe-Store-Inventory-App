@@ -11,8 +11,15 @@ class ShoeListViewModel : ViewModel() {
     private val _shoeList = MutableLiveData<MutableList<Shoe>>()
     val shoeList: LiveData<MutableList<Shoe>> get() = _shoeList
 
+    private val _selectedShoe = MutableLiveData<Shoe>()
+    val selectedShoe: LiveData<Shoe> get() = _selectedShoe
+
+    private var fakeList = mutableListOf<Shoe>()
+
     init {
-        val list = mutableListOf(
+
+        // fake repository
+        fakeList = mutableListOf(
             Shoe(
                 "Chuck Taylor All Star",
                 42.0,
@@ -43,7 +50,7 @@ class ShoeListViewModel : ViewModel() {
                 listOf(R.drawable.shoes_5)
             )
         )
-        _shoeList.value = list
+        _shoeList.value = fakeList
     }
 
     fun saveShoe(s: Shoe): Boolean {
@@ -61,6 +68,10 @@ class ShoeListViewModel : ViewModel() {
             return true
         }
         return false
+    }
+
+    fun findShoeWithName(shoe: Shoe) {
+        _selectedShoe.value = fakeList.first { s -> s == shoe }
     }
 
 }

@@ -2,17 +2,16 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-
-    <data>
-
-    </data>
-
+    <!--
+    * we used ConstraintLayout to Build a Responsive UI
+    * and to create a flat hierarchy
+    -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".ui.screens.welcome.WelcomeFragment">
 
-
+        <!-- Guideline used for arranging item inside ConstraintLayout -->
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline1"
             android:layout_width="wrap_content"
@@ -20,6 +19,7 @@
             android:orientation="vertical"
             app:layout_constraintGuide_percent=".25" />
 
+        <!-- Guideline used for arranging item inside ConstraintLayout -->
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline2"
             android:layout_width="wrap_content"
@@ -27,6 +27,7 @@
             android:orientation="vertical"
             app:layout_constraintGuide_percent="0.75" />
 
+        <!-- Emoji of successful login -->
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="205dp"
@@ -40,6 +41,7 @@
             app:srcCompat="@drawable/ic_round_done_24"
             app:tint="@color/colorAccent" />
 
+        <!-- welcome text -->
         <TextView
             android:id="@+id/tvWelcome"
             style="@style/BigTextStyle"
@@ -53,6 +55,7 @@
             app:layout_constraintStart_toStartOf="@+id/guideline1"
             app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
+        <!-- welcome message -->
         <TextView
             android:id="@+id/tvWelcomeMessage"
             android:layout_width="0dp"
@@ -64,6 +67,7 @@
             app:layout_constraintStart_toStartOf="@+id/guideline1"
             app:layout_constraintTop_toBottomOf="@+id/tvWelcome" />
 
+        <!-- button to navigate to the next destination -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnContinue"
             style="@style/ColoredButton"

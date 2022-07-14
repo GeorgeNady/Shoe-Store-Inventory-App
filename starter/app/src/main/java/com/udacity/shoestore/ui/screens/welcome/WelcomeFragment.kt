@@ -27,6 +27,10 @@ class WelcomeFragment : Fragment() {
         return binding.root
     }
 
+    /**
+     * * used to destroy or clear all the generated binding views
+     * * and data to avoid memory leak and conflicts
+     */
     override fun onDestroy() {
         super.onDestroy()
         _binding = null

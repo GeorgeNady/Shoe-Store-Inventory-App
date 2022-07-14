@@ -3,10 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <data>
-
-    </data>
-
+    <!--  we used ConstraintLayout to Build a Responsive UI -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -15,6 +12,7 @@
         android:paddingHorizontal="16dp"
         tools:context=".ui.screens.login.LoginFragment">
 
+        <!--  -->
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/materialCardView"
             android:layout_width="0dp"
@@ -28,22 +26,27 @@
             app:layout_constraintVertical_chainStyle="packed"
             app:strokeColor="@color/black25">
 
+            <!--
+            * we used ConstraintLayout to Build a Responsive UI
+            * and to create a flat hierarchy
+            -->
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:padding="16dp">
 
+                <!-- email label -->
                 <TextView
                     android:id="@+id/tvEmail"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:labelFor="@+id/etEmail"
                     android:text="@string/email"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.235"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
+                <!-- email edit text -->
                 <EditText
                     android:id="@+id/etEmail"
                     style="@style/EditTextStyle"
@@ -57,17 +60,18 @@
                     app:layout_constraintStart_toStartOf="@+id/tvEmail"
                     app:layout_constraintTop_toBottomOf="@+id/tvEmail" />
 
+                 <!-- password label -->
                 <TextView
                     android:id="@+id/tvPassword"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/default_margin"
-                    android:labelFor="@id/etPassword"
                     android:text="@string/password"
                     app:layout_constraintEnd_toEndOf="@+id/etEmail"
                     app:layout_constraintStart_toStartOf="@+id/etEmail"
                     app:layout_constraintTop_toBottomOf="@+id/etEmail" />
 
+                <!-- password edit text -->
                 <EditText
                     android:id="@+id/etPassword"
                     style="@style/EditTextStyle"
@@ -86,6 +90,7 @@
         </com.google.android.material.card.MaterialCardView>
 
 
+        <!-- login button from material design library / with a colored style -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnLogin"
             style="@style/ColoredButton"
@@ -99,6 +104,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/materialCardView" />
 
+        <!-- create button from material design library / with a borderless colored style -->
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnCreate"
             style="@style/BorderlessColoredButton"

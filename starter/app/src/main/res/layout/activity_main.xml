@@ -3,15 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <data>
-
-    </data>
-
+    <!--  we used ConstraintLayout to Build a Responsive UI -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".ui.MainActivity">
 
+        <!--
+        FragmentContainerView is a customized Layout designed specifically for Fragments.
+        It extends FrameLayout, so it can reliably handle Fragment Transactions,
+        and it also has additional features to coordinate with fragment behavior
+        references:
+        https://developer.android.com/reference/androidx/fragment/app/FragmentContainerView
+        -->
         <androidx.fragment.app.FragmentContainerView
             android:id="@+id/fragmentContainerView"
             android:name="androidx.navigation.fragment.NavHostFragment"

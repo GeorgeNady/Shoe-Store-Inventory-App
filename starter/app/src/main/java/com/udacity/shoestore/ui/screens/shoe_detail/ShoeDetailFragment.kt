@@ -33,6 +33,10 @@ class ShoeDetailFragment : Fragment() {
         return binding.root
     }
 
+    /**
+     * * used to destroy or clear all the generated binding views
+     * * and data to avoid memory leak and conflicts
+     */
     override fun onDestroy() {
         super.onDestroy()
         _binding = null
@@ -48,21 +52,13 @@ class ShoeDetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.apply {
+            bViewModel = viewModel
             mShoe?.let {
-                bShoe = it
+                viewModel.findShoeWithName(it)
             }
 
             btnSave.setOnClickListener {
-                val images = if (mShoe != null) mShoe?.images else listOf(R.drawable.shoes_1)
-                val shoe = Shoe(
-                    etName.txt,
-                    etSize.txt.toDouble(),
-                    etCompany.txt,
-                    etDescription.txt,
-                    images
-                )
-                val result = viewModel.saveShoe(shoe)
-                if (result) findNavController().navigateUp()
+                findNavController().navigateUp()
             }
 
             btnCancel.setOnClickListener {
@@ -71,5 +67,4 @@ class ShoeDetailFragment : Fragment() {
         }
     }
 
-    val EditText.txt get() = text.toString()
 }

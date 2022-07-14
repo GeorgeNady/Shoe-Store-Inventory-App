@@ -32,27 +32,11 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    /**
+     * setup navController navigation up with the OS back pressed event listeners
+     * */
     override fun onSupportNavigateUp(): Boolean {
         return navController.navigateUp() || super.onSupportNavigateUp()
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menuInflater.inflate(R.menu.logout_menu, menu)
-        return super.onCreateOptionsMenu(menu)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
-            R.id.loginFragment -> {
-                val navOptions = NavOptions.Builder()
-                    .setLaunchSingleTop(true)
-                    .setPopUpTo(R.id.main_nav_graph, inclusive = true)
-                    .build()
-                navController.navigate(R.id.loginFragment, null, navOptions)
-                true
-            }
-            else -> super.onOptionsItemSelected(item)
-        }
     }
 
 }

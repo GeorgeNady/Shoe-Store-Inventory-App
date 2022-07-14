@@ -3,16 +3,33 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <data>
-
-    </data>
-
+    <!--
+    * we used ConstraintLayout to Build a Responsive UI
+    * and to create a flat hierarchy
+    -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".ui.screens.shoe_list.ShoeListFragment">
 
-        <androidx.recyclerview.widget.RecyclerView
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- used to be able to add a new views inside it -->
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+        <!-- TODO: replace it with normal TextView -->
+        <!--<androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvShoe"
             android:layout_width="0dp"
             android:layout_height="0dp"
@@ -25,8 +42,10 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:itemCount="3"
-            tools:listitem="@layout/item_shoe" />
+            tools:listitem="@layout/item_shoe" />-->
 
+        <!-- floating action button to add new shoe
+        and to navigate to shoe detail fragment using navigation component -->
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fabDetail"
             android:layout_width="wrap_content"

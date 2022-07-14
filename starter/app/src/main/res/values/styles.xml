@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
@@ -6,6 +6,7 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <!-- used here to apply this style globally to all text views -->
         <item name="android:textViewStyle">@style/TextStyle</item>
     </style>
 
@@ -13,16 +14,19 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <!-- default text view style -->
     <style name="TextStyle" parent="Widget.AppCompat.TextView">
         <item name="android:fontFamily">@font/cagliostro</item>
         <item name="android:textColor">@color/black</item>
         <item name="android:textSize">@dimen/default_text_size</item>
     </style>
 
+    <!-- extends TextStyle to apply it's attributes and also apply custom padding -->
     <style name="TextStylePadding" parent="TextStyle">
         <item name="android:padding">@dimen/small_padding</item>
     </style>
 
+    <!-- created specifically for titles and headlines -->
     <style name="BigTextStyle" parent="Widget.AppCompat.TextView">
         <item name="android:fontFamily">@font/cagliostro</item>
         <item name="android:textSize">@dimen/big_text_size</item>
@@ -31,21 +35,24 @@
 
     </style>
 
+    <!-- edit text style with some custom background {@drawable/et_background} -->
     <style name="EditTextStyle" parent="TextStyle">
         <item name="android:background">@drawable/et_background</item>
-        <item name="android:paddingVertical">@dimen/default_vertical_padding</item>
-        <item name="android:paddingHorizontal">@dimen/default_horizontal_padding</item>
+        <item name="android:paddingVertical" tools:targetApi="o">@dimen/default_vertical_padding</item>
+        <item name="android:paddingHorizontal" tools:targetApi="o">@dimen/default_horizontal_padding</item>
     </style>
 
+    <!-- colored button -->
     <style name="ColoredButton" parent="Widget.MaterialComponents.Button">
         <item name="android:fontFamily">@font/cagliostro</item>
         <item name="cornerRadius">@dimen/default_corner_radius</item>
-        <item name="android:paddingVertical">@dimen/default_vertical_padding</item>
+        <item name="android:paddingVertical" tools:targetApi="o">@dimen/default_vertical_padding</item>
     </style>
 
+    <!-- borderless colored button with outline style -->
     <style name="BorderlessColoredButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
         <item name="cornerRadius">@dimen/default_corner_radius</item>
-        <item name="android:paddingVertical">@dimen/default_vertical_padding</item>
+        <item name="android:paddingVertical" tools:targetApi="o">@dimen/default_vertical_padding</item>
         <item name="android:fontFamily">@font/cagliostro</item>
     </style>
 
