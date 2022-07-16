@@ -3,6 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+
+        <variable
+            name="bViewModel"
+            type="com.udacity.shoestore.ui.screens.login.LoginViewModel" />
+    </data>
+
     <!--  we used ConstraintLayout to Build a Responsive UI -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -56,11 +63,12 @@
                     android:autofillHints="emailAddress"
                     android:hint="@string/email_hint"
                     android:inputType="textEmailAddress"
+                    android:text="@={bViewModel.email}"
                     app:layout_constraintEnd_toEndOf="@+id/tvEmail"
                     app:layout_constraintStart_toStartOf="@+id/tvEmail"
                     app:layout_constraintTop_toBottomOf="@+id/tvEmail" />
 
-                 <!-- password label -->
+                <!-- password label -->
                 <TextView
                     android:id="@+id/tvPassword"
                     android:layout_width="0dp"
@@ -81,6 +89,7 @@
                     android:autofillHints="password"
                     android:hint="@string/password_hint"
                     android:inputType="textPassword"
+                    android:text="@={bViewModel.password}"
                     app:layout_constraintEnd_toEndOf="@+id/tvPassword"
                     app:layout_constraintStart_toStartOf="@+id/tvPassword"
                     app:layout_constraintTop_toBottomOf="@+id/tvPassword" />
